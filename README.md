@@ -1,29 +1,14 @@
 # Crypto
 
 Table des matières
-Présentation des cryptomonnaies	1
-Qu’est-ce qu’une cryptomonnaie ?	1
-Vocabulaire	2
-Blockchain	2
-Nœuds	2
-Smart contracts	2
-Token	3
-Fork	3
-Présentation d’un wallet	3
-Qu’est-ce qu’un wallet ?	3
-Comment ça fonctionne ?	4
-Wallet pour crypto monnaie	4
-	4
-Création d’un wallet	4
-Menaces potentielles	5
-Phishing	5
-Logiciels malveillants	5
-Injection de code	5
-Vol de portefeuilles	5
-Attaques par dictionnaire	6
-Fourre tout	6
-Lexique flemme de chercher maintenant	6
-Index	6
+Présentation des cryptomonnaies	
+Présentation d’un wallet
+Création d’un wallet	
+Menaces potentielles
+
+Fourre tout	
+Lexique flemme de chercher maintenant	
+Index	
 
 
 ## Présentation des cryptomonnaies 
@@ -57,9 +42,9 @@ Fork
 Qu’est-ce qu’un wallet ?
 C’est un portefeuille virtuel qui stocke de manière sécurisée les informations bancaires. Elle peut donc contenir des monnaies tel que des euros ou encore des dollars mais aussi des cryptomonnaies. 
 Il en existe trois types : 
--	 Online wallet : les plus simples et accessibles d’utilisations. Car accessible 24h/24 et n’ont pas besoin de téléchargement. Mais la gestion de vos cryptos se fait par un tier et est dépendant de celui-ci (ils sont donc les propriétaires légales de ces cryptos monnaies). En général les grandes plateformes d’exchange sont aussi des online wallet. 
--	Desktop/mobile wallet :  permet de stocker la clé privée depuis un appareil qui nous appartient. Ce qui permet d’avoir un contrôle total sur nos cryptos. Mais cela peut être dangereux en cas d’attaque informatique. Il est aussi très important de mettre son wallet régulièrement à jour son wallet. Il existe donc deux types de ce genre de wallet : des wallets lourds et des wallets légers. Les premiers vont télécharger l’intégralité de la blockchain tandis que l’autre télécharge qu’une partie de la blockchain pour vérifier son intégralité
--	Cold wallet :  le portefeuille le plus sécurisé car pas relié à internet. Il en existe deux types :  le premier est le paper wallet c’est un wallet qui consiste à marquer les clés public et privés sur une feuille que l’on garde précieusement. Mais celui-ci ne permet pas de faire de l’exchange donc il faudra donc partager la clé privée avec un autre wallet et donc cela créer une vulnérabilité au wallet. L’autre type est le Hardware wallet. C’est celui qui demande le plus d’investissement car il faut acheter le support matériel. Mais ce wallet permet de protéger les clés dans des coffres fort numériques qui encrypte les différentes clés. Les cryptos sont par ailleurs stockés dans une seed phase qui peut être demander de noter. Ainsi, on aura toujours l’occasions de retrouver nos fonds et ça quel que soit l’appareil.  
+-	 __Online wallet__ : les plus simples et accessibles d’utilisations. Car accessible 24h/24 et n’ont pas besoin de téléchargement. Mais la gestion de vos cryptos se fait par un tier et est dépendant de celui-ci (ils sont donc les propriétaires légales de ces cryptos monnaies). En général les grandes plateformes d’exchange sont aussi des online wallet. 
+-	__Desktop/mobile wallet__ :  permet de stocker la clé privée depuis un appareil qui nous appartient. Ce qui permet d’avoir un contrôle total sur nos cryptos. Mais cela peut être dangereux en cas d’attaque informatique. Il est aussi très important de mettre son wallet régulièrement à jour son wallet. Il existe donc deux types de ce genre de wallet : des wallets lourds et des wallets légers. Les premiers vont télécharger l’intégralité de la blockchain tandis que l’autre télécharge qu’une partie de la blockchain pour vérifier son intégralité
+-	__Cold wallet__ :  le portefeuille le plus sécurisé car pas relié à internet. Il en existe deux types :  le premier est le paper wallet c’est un wallet qui consiste à marquer les clés public et privés sur une feuille que l’on garde précieusement. Mais celui-ci ne permet pas de faire de l’exchange donc il faudra donc partager la clé privée avec un autre wallet et donc cela créer une vulnérabilité au wallet. L’autre type est le Hardware wallet. C’est celui qui demande le plus d’investissement car il faut acheter le support matériel. Mais ce wallet permet de protéger les clés dans des coffres fort numériques qui encrypte les différentes clés. Les cryptos sont par ailleurs stockés dans une seed phase qui peut être demander de noter. Ainsi, on aura toujours l’occasions de retrouver nos fonds et ça quel que soit l’appareil.  
 Mais un wallet peut aussi contenir d’autres choses que de l’argent tel que des places de concerts ou encore un pass sanitaire.
 Comment ça fonctionne ?
 Pour communiquer avec des sites marchands, les wallet de monnaies classiques utilisent des logiciels afin de communiquer les informations bancaires. 
