@@ -2,17 +2,17 @@
 
 Table des matières
 
-Présentation des cryptomonnaies	
+* Présentation des cryptomonnaies	
 
-Présentation d’un wallet
+* Présentation d’un wallet
 
-Création d’un wallet
+* Création d’un wallet
 
-Menaces potentielles
+* Menaces potentielles
 
-Fourre tout	
-Lexique flemme de chercher maintenant	
-Index	
+* Fourre tout	
+* Lexique flemme de chercher maintenant	
+* Index	
 
 
 ## Présentation des cryptomonnaies 
