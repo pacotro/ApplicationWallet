@@ -26,7 +26,7 @@ Lexique flemme de chercher maintenant	6
 Index	6
 
 
-Présentation des cryptomonnaies 
+## Présentation des cryptomonnaies 
 
 Qu’est-ce qu’une cryptomonnaie ? 
 Les cryptomonnaies sont des monnaies dématérialisées c’est-à-dire qu’elles n’ont pas de support physique dont le fonctionnement est décentralisé c’est-à-dire qu’il n’y a personne derrière pour l’émettre, la réguler ou encore la contrôler et surtout, il n’y a pas d’intermédiaires pour assurer les transactions. De plus, cela fonctionne en peer-to-peer c’est-à-dire que chaque ordinateur est à la fois un client mais aussi un serveur. Et chaque transaction repose sur des algorithmes cryptographiques.
@@ -52,7 +52,7 @@ Fork
 
 
 
-Présentation d’un wallet 
+## Présentation d’un wallet 
 
 Qu’est-ce qu’un wallet ?
 C’est un portefeuille virtuel qui stocke de manière sécurisée les informations bancaires. Elle peut donc contenir des monnaies tel que des euros ou encore des dollars mais aussi des cryptomonnaies. 
@@ -81,7 +81,7 @@ Un wallet possède au moins deux choses :
 
 La première a pour but de recevoir de l’argent et donc la partager n’est pas si grave tandis que la seconde ne doit pas être partager puisqu’elle a pour but d’envoyer des cryptos.
 
-Création d’un wallet
+## Création d’un wallet
 
 
 
@@ -94,7 +94,7 @@ Création d’un wallet
 
 
 
-Menaces potentielles
+## Menaces potentielles
 
 Phishing 
 C’est une technique qui consiste à se faire passer pour un tier de confiance afin de récupérer des informations confidentielles. 
