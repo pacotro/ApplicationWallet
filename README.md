@@ -1,9 +1,13 @@
 # Crypto
 
 Table des matières
+
 Présentation des cryptomonnaies	
+
 Présentation d’un wallet
-Création d’un wallet	
+
+Création d’un wallet
+
 Menaces potentielles
 
 Fourre tout	
