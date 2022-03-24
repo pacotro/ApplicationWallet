@@ -1,4 +1,4 @@
-Crypto
+# Crypto
 
 Table des matières
 Présentation des cryptomonnaies	1
@@ -46,9 +46,7 @@ Le smart contract reprend l’ensemble de ces notions du contrat mais résulte d
 (La blockchain peut contenir d’autres informations que des transactions. En effet, il peut y avoir des lignes de codes, des contracts et des algorithmes en détaillant leurs conditions de déclenchement.)
 Token
 C’est l’unité d’échange. L’éther est le token de la blockchain Ethereum 
-Fork 
-
-
+Fork
 
 
 
