@@ -107,7 +107,100 @@ Attaques par dictionnaire
 L'attaque par dictionnaire est une méthode utilisée en cryptanalyse pour trouver un mot de passe ou une clé. Elle consiste à tester une série de mots de passe potentiels, les uns à la suite des autres, en espérant que le mot de passe utilisé pour le chiffrement soit contenu dans le dictionnaire.
 Bloquer au bout de 3 tentatives ou temporiser entre chaque tentative, moins efficace mais demander à la création un mot de passe compliqué.
 
+# Sécurisation des applications
 
+
+La sécurisation d’une application ou d’un système s’attache aux 6 aspects suivants :
+
+__L’authentification__
+
+Lier (de manière discriminante) une identité à une entité donnée d’un système
+*	Dé personnification : Comment s’assure-t-on que la personne est bien celle qu’elle prétend être
+*	Rejeu : Comment lutter contre la capture des mots de passe
+*	Rebond : Comment lutter contre la capture des mots de passe sur une autre application
+*	Altération : Comment s’assure-t-on ne s’approprie pas une signature illégalement
+*	Transférabilité : Comment lutter contre l’échange de mot de passe
+
+__Le contrôle d’accès__
+
+Lier une ressource (base de données) avec les droits d’accès et une entité
+Rôle : administrateur, éditeur, utilisateur
+
+__L’intégrité__
+
+Prévenir l’altération volontaire ou accidentelle d’une donnée ou des services
+
+__La confidentialité __
+
+La confidentialité des données lors d’échanges, garantir que des données acquises illégalement soient inutilisables
+
+__La non-répudiation__
+
+S’assurer que l’envoi et la réception d’un message sont incontestables, personne ne doit nier son implication en cas de litige (certificat)
+La protection contre l’analyse du trafic
+L’utilisation des protocoles SSL (Secure Socket Layer) et TLS (Transport Layer Security) dans les échanges sur le Web (https)
+
+## Sécurisation des communications avec TLS
+
+3 fonctions majeures :
+	Confidentialité : algorithme de chiffrements symétriques (AES 256, RC4, DES, Blow Fish) et asymétrique (RSA,DSA, Diifie Helmann) 
+	Intégrité : Signature des données (HMAC, MD,RIPEMD, SHA-1)
+	Authentification : Certificat X.509
+
+## Mettre en place un mécanisme d’authentification
+
+3 manières de stocker les mots de passe
+	En clair
+	Signature du mot de passe :Signature calculée grâce à une fonction de hachage (Md5)
+Problème : Même mot de passe pour différents sites ou force brute de type dictionnaire
+	Stocker le mot de passe avec un sel : longue chaine de caractères spécifiques à un utilisateur
+Lors de l’authentification, l'utilisateur soumet son mot de passe en clair et l’application calcule la signature avec le sel. Si le calcul de cette nouvelle signature correspond à la signature stockée, alors le mot de passe entré par l'utilisateur est le bon.
+Problème : Force brute (stratégie d’attaque basées sur des fréquences bien plus élevées que les algorithmes de chiffrement ne peuvent pas atteindre)
+Bonne pratique :
+Utiliser une fonction de hachage spécifique avec plusieurs itérations de calculs (bcrypt)
+Biométrie de l’utilisateur (empreinte, face id)
+Authentification multifactorielle (SMS)
+
+## Contrôler l’accès à nos applications
+
+Le moindre privilège : Une tâche ne doit bénéficier que des privilèges strictement nécessaires à l’exécution du code menant à bien ses fonctionnalités
+La bibliothèque Oauth 2.0
+4 rôles : Le détenteur, le serveur de ressources, le client, le serveur d’autorisation
+
+## Gérer les sessions
+
+Surtout sur le web
+
+## Manipuler les données non fiables
+
+Injection SQL …
+Coté serveur et client
+
+## Protection des données et des bases de données
+
+Protocole TLS pour le chiffrement des communications
+Pour les bases de données :
+Accès mal sécurisé
+*	Chiffrer les paramètres
+*	Gérer les privilèges
+*	Protéger les accès (authentification multi facteur)
+Données non fiables
+*	Requêtes paramétrées
+*	Variables fortement typées
+*	Echappement des entrées
+Pendant l’exploitation
+*	Installer les correctifs
+*	Limiter les fonctionnalités
+*	Historiser les transactions
+
+## Sécuriser les erreurs des logs
+
+Traiter les erreurs
+*	Limiter les informations divulguées
+*	Journaliser les évènements
+**	Statistiques d’utilisation
+**	Détection des bugs
+**	Retour sur une panne
 
 
 ----------------
