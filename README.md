@@ -198,9 +198,9 @@ Pendant l’exploitation
 Traiter les erreurs
 *	Limiter les informations divulguées
 *	Journaliser les évènements
-**	Statistiques d’utilisation
-**	Détection des bugs
-**	Retour sur une panne
+	*	Statistiques d’utilisation
+	*	Détection des bugs
+	*	Retour sur une panne
 
 
 ----------------
