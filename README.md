@@ -191,15 +191,21 @@ Coté serveur et client
 
 Protocole TLS pour le chiffrement des communications
 Pour les bases de données :
+
 Accès mal sécurisé
+
 *	Chiffrer les paramètres
 *	Gérer les privilèges
 *	Protéger les accès (authentification multi facteur)
+*	
 Données non fiables
+
 *	Requêtes paramétrées
 *	Variables fortement typées
 *	Echappement des entrées
+
 Pendant l’exploitation
+
 *	Installer les correctifs
 *	Limiter les fonctionnalités
 *	Historiser les transactions
