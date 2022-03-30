@@ -118,7 +118,7 @@ Pour contrer cela, on peut vérifier que l’utilisateur ne rentre pas de comman
 __Vol de portefeuilles__<br> 
 Le principe de vol de portefeuille fonctionne surtout dans le changement d'adresse vers une controlée par l'attaquant, les deux cas vu lors de notre recherche est le cas d'un scan de différents ports ou du presse papiers. Le virus fonvtionnait en attendant qu'une chaîne ressemblant à une adresse de portefeuille de cryptomonnaie soit placée dans le Presse-papiers et la remplacaient alors par une adresse contrôlée par le cybercriminel. Nous avons aussi le cas d'un CSFR qui afonctionné sur plusieurs plateformes Pour ce danger, il existe des solutions mais celle ci sont encore un peu complexe pour les comprendre. https://blog.netlab.360.com/warning-satori-a-new-mirai-variant-is-spreading-in-worm-style-on-port-37215-and-52869-en/ http://blog.netlab.360.com/art-of-steal-satori-variant-is-robbing-eth-bitcoin-by-replacing-wallet-address-en/
 
-__Attaques par dictionnaire__ 
+__Attaques par dictionnaire__<br> 
 L'attaque par dictionnaire est une méthode utilisée en cryptanalyse pour trouver un mot de passe ou une clé. Elle consiste à tester une série de mots de passe potentiels, les uns à la suite des autres, en espérant que le mot de passe utilisé pour le chiffrement soit contenu dans le dictionnaire. <br>
 Bloquer au bout de 3 tentatives ou temporiser entre chaque tentative, moins efficace mais demander à la création un mot de passe compliqué.
 
