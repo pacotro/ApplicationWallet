@@ -208,7 +208,7 @@ Pendant l’exploitation
 *	Limiter les fonctionnalités
 *	Historiser les transactions
 
-###### Sécuriser les erreurs des logs
+ __Sécuriser les erreurs des logs__
 
 Traiter les erreurs
 *	Limiter les informations divulguées
@@ -216,6 +216,50 @@ Traiter les erreurs
 	*	Statistiques d’utilisation
 	*	Détection des bugs
 	*	Retour sur une panne
+
+
+#### Pour ce qui est de la sécurité sur les applications Android
+
+Le projet de sécurité mobile de l'OWASP est une ressource centralisée destinée à donner aux développeurs et aux équipes de sécurité les ressources dont ils ont besoin pour créer et maintenir des applications mobiles sécurisées. L’objectif est de classer les risques de sécurité mobile et de fournir des contrôles de développement pour réduire leur impact ou leur probabilité d'exploitation. 
+
+__Mobile App Security Requirements and Verification__
+
+Plusieurs niveaux de validation
+
+MASVS L2+R 
+
+« Industrie Financière : Applications de banque en ligne permettant aux utilisateurs de transférer des fonds et où les techniques d’injection de code et d’instrumentation sur des appareils mobiles compromis entraînent un risque. Dans ce cas, les contrôles du MASVS-R peuvent être mis en oeuvre pour empêcher la manipulation et rendre la vie des créateurs de logiciels malveillants (malwares) plus compliquée. »
+
+
+1.	Exigences Concernant l’Architecture, le Design et le Modèle de Menaces
+2.	Exigences Concernant le Stockage des Données et le Respect de la Vie Privée
+3.	Exigences Concernant la Cryptographie
+4.	Exigences Concernant l’Authentification et la Gestion des Sessions
+5.	Exigences Concernant la Communication Réseau
+6.	Exigences Concernant les Interactions avec la Plateforme
+7.	Exigences Concernant la Qualité du Code et les Paramètres de Génération
+8.	Exigences Concernant la Résilience
+
+__Mobile App Security Checklist__
+
+Une checklist des vulnérabilités d’une application
+
+https://github.com/OWASP/owasp-mstg/releases/tag/v1.4.0
+
+Top 10 Mobile Risks - Final List 2016
+	*M1: Improper Platform Usage
+	*M2: Insecure Data Storage
+	*M3: Insecure Communication
+	*M4: Insecure Authentication
+	*M5: Insufficient Cryptography
+	*M6: Insecure Authorization
+	*M7: Client Code Quality
+	*M8: Code Tampering
+	*M9: Reverse Engineering
+	*M10: Extraneous Functionality
+
+
+
 
 
 ----------------
