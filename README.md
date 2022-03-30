@@ -197,7 +197,7 @@ Accès mal sécurisé
 *	Chiffrer les paramètres
 *	Gérer les privilèges
 *	Protéger les accès (authentification multi facteur)
-*	
+
 Données non fiables
 
 *	Requêtes paramétrées
