@@ -2,7 +2,7 @@
 
 Table des matières
 
-* Présentation des cryptomonnaies	
+* [Présentation des cryptomonnaies](#crypto)	
 
 * Présentation d’un wallet
 
@@ -16,7 +16,7 @@ Table des matières
 * Lexique flemme de chercher maintenant	
 * Index	
 
-
+<div id='crypto'/>
 ## Présentation des cryptomonnaies 
 
 Qu’est-ce qu’une cryptomonnaie ? 
