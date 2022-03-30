@@ -247,16 +247,16 @@ Une checklist des vulnérabilités d’une application
 https://github.com/OWASP/owasp-mstg/releases/tag/v1.4.0
 
 Top 10 Mobile Risks - Final List 2016
-	* M1: Improper Platform Usage
-	* M2: Insecure Data Storage
-	* M3: Insecure Communication
-	* M4: Insecure Authentication
-	* M5: Insufficient Cryptography
-	* M6: Insecure Authorization
-	* M7: Client Code Quality
-	* M8: Code Tampering
-	* M9: Reverse Engineering
-	* M10: Extraneous Functionality
+* M1: Improper Platform Usage
+* M2: Insecure Data Storage
+* M3: Insecure Communication
+* M4: Insecure Authentication
+* M5: Insufficient Cryptography
+* M6: Insecure Authorization
+* M7: Client Code Quality
+* M8: Code Tampering
+* M9: Reverse Engineering
+* M10: Extraneous Functionality
 
 
 
