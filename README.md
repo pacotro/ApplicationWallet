@@ -16,9 +16,10 @@ Table des matières
 * Lexique flemme de chercher maintenant	
 * Index	
 
+<div id='crypto'/>
 
 ## Présentation des cryptomonnaies 
-<div id='crypto'/>
+
 Qu’est-ce qu’une cryptomonnaie ? 
 Les cryptomonnaies sont des monnaies dématérialisées c’est-à-dire qu’elles n’ont pas de support physique dont le fonctionnement est décentralisé c’est-à-dire qu’il n’y a personne derrière pour l’émettre, la réguler ou encore la contrôler et surtout, il n’y a pas d’intermédiaires pour assurer les transactions. De plus, cela fonctionne en peer-to-peer c’est-à-dire que chaque ordinateur est à la fois un client mais aussi un serveur. Et chaque transaction repose sur des algorithmes cryptographiques.
 De plus, le nombre d’unités en circulation et la masse monétaire maximale sont définis à l’avance.
@@ -47,6 +48,7 @@ Fork
 
 
 <div id='presentation'/>
+
 ## Présentation d’un wallet 
 
 Qu’est-ce qu’un wallet ?
@@ -80,6 +82,7 @@ Un wallet possède au moins deux choses :
 La première a pour but de recevoir de l’argent et donc la partager n’est pas si grave tandis que la seconde ne doit pas être partager puisqu’elle a pour but d’envoyer des cryptos.
 
 <div id='creation'/>
+
 ## Création d’un wallet
 
 ` test `
@@ -93,6 +96,7 @@ La première a pour but de recevoir de l’argent et donc la partager n’est pa
 
 
 <div id='menace'/>
+
 ## Menaces potentielles
 
 Phishing 
@@ -111,6 +115,7 @@ L'attaque par dictionnaire est une méthode utilisée en cryptanalyse pour trouv
 Bloquer au bout de 3 tentatives ou temporiser entre chaque tentative, moins efficace mais demander à la création un mot de passe compliqué.
 
 <div id='securisation'/>
+
 # Sécurisation des applications
 
 
