@@ -12,9 +12,11 @@ Table des matières
 
 * [Sécurisation des applications](#securisation)
 
-* Fourre tout	
-* Lexique flemme de chercher maintenant	
-* Index	
+* [Fourre tout]
+	
+* [Lexique] 
+	
+* [Index]	
 
 <div id='crypto'/>
 
