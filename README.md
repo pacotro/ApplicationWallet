@@ -12,11 +12,11 @@ Table des matières
 
 * [Sécurisation des applications](#securisation)
 
-* [Fourre tout]
+* [Fourre tout](#ft)
 	
-* [Lexique] 
+* [Lexique](#lexique)
 	
-* [Index]	
+* [Index](#index)	
 
 <div id='crypto'/>
 
@@ -216,13 +216,20 @@ Traiter les erreurs
 
 ----------------
 
-Fourre tout
+<div id='ft'/>
 
-Lexique flemme de chercher maintenant 
+## Fourre tout 
+
+<div id='lexique'/>
+
+## Lexique
 
 Fork 
 seed phrase
-Index 
+
+<div id='index'/>
+
+## Index 
 https://n26.com/fr-fr/wallet
 https://cryptoast.fr/comment-securiser-et-stocker-crypto-monnaies/
 https://vallbanc.com/fr/crypto-monnaies-blockchain-et-decentralisation-du-systeme-bancaire
