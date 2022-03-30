@@ -258,7 +258,15 @@ Top 10 Mobile Risks - Final List 2016
 * M9: Reverse Engineering
 * M10: Extraneous Functionality
 
+#### Documentation :
 
+__L’attaque par recouvrement__
+
+https://www.silicon.fr/android-faille-redoutable-attaque-recouvrement-183857.html
+
+La faille permet de mener des attaques dites « overlay » où une fausse page s’affiche sur l’écran en lieu et place de l’affichage légitime pour tromper l’utilisateur et le pousser à installer des malwares à son insu.
+
+Par exemple, une application invite l’utilisateur à « Continuer » pour appliquer une mise à jour alors qu’elle cache en fait l’installation du malware Porn Droid, comme le montre les captures d’écran ci-contre.
 
 
 
@@ -281,6 +289,14 @@ seed phrase
 https://n26.com/fr-fr/wallet <br>
 https://cryptoast.fr/comment-securiser-et-stocker-crypto-monnaies/ <br>
 https://vallbanc.com/fr/crypto-monnaies-blockchain-et-decentralisation-du-systeme-bancaire <br>
+
+Le site de l’owasp mobile project : https://owasp.org/www-project-mobile-security-testing-guide/
+
+https://openclassrooms.com/fr/courses/1757741-securisez-vos-donnees-avec-la-cryptographie <br>
+https://www.ssi.gouv.fr/administration/guide/recommandations-de-securite-relatives-a-tls/ <br>
+https://www.ssi.gouv.fr/uploads/2017/12/guide_cloisonnement_systeme_anssi_pg_040_v1.pdf <br>
+
+
 
 
 Exemple wallet Android 
