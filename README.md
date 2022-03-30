@@ -123,7 +123,7 @@ Bloquer au bout de 3 tentatives ou temporiser entre chaque tentative, moins effi
 
 La sécurisation d’une application ou d’un système s’attache aux 6 aspects suivants :
 
-__L’authentification__
+###### L’authentification
 
 Lier (de manière discriminante) une identité à une entité donnée d’un système
 *	Dé personnification : Comment s’assure-t-on que la personne est bien celle qu’elle prétend être
@@ -132,33 +132,32 @@ Lier (de manière discriminante) une identité à une entité donnée d’un sys
 *	Altération : Comment s’assure-t-on ne s’approprie pas une signature illégalement
 *	Transférabilité : Comment lutter contre l’échange de mot de passe
 
-__Le contrôle d’accès__
+###### Le contrôle d’accès
 
 Lier une ressource (base de données) avec les droits d’accès et une entité
 Rôle : administrateur, éditeur, utilisateur
 
-__L’intégrité__
+###### L’intégrité 
 
 Prévenir l’altération volontaire ou accidentelle d’une donnée ou des services
 
-__La confidentialité__
+###### La confidentialité
 
 La confidentialité des données lors d’échanges, garantir que des données acquises illégalement soient inutilisables
 
-__La non-répudiation__
+###### La non-répudiation
 
 S’assurer que l’envoi et la réception d’un message sont incontestables, personne ne doit nier son implication en cas de litige (certificat)
 La protection contre l’analyse du trafic
 L’utilisation des protocoles SSL (Secure Socket Layer) et TLS (Transport Layer Security) dans les échanges sur le Web (https)
 
-###### Sécurisation des communications avec TLS
+__Sécurisation des communications avec TLS__
 
 3 fonctions majeures :
 	Confidentialité : algorithme de chiffrements symétriques (AES 256, RC4, DES, Blow Fish) et asymétrique (RSA,DSA, Diifie Helmann) 
 	Intégrité : Signature des données (HMAC, MD,RIPEMD, SHA-1)
 	Authentification : Certificat X.509
-
-###### Mettre en place un mécanisme d’authentification
+__Mettre en place un mécanisme d’authentification__
 
 3 manières de stocker les mots de passe
 	En clair
@@ -172,22 +171,21 @@ Utiliser une fonction de hachage spécifique avec plusieurs itérations de calcu
 Biométrie de l’utilisateur (empreinte, face id)
 Authentification multifactorielle (SMS)
 
-###### Contrôler l’accès à nos applications
+__Contrôler l’accès à nos applications__
 
 Le moindre privilège : Une tâche ne doit bénéficier que des privilèges strictement nécessaires à l’exécution du code menant à bien ses fonctionnalités
 La bibliothèque Oauth 2.0
 4 rôles : Le détenteur, le serveur de ressources, le client, le serveur d’autorisation
 
-###### Gérer les sessions
+__Gérer les sessions__
 
 Surtout sur le web
-
-###### Manipuler les données non fiables
+__Manipuler les données non fiables__
 
 Injection SQL …
 Coté serveur et client
 
-###### Protection des données et des bases de données
+__Protection des données et des bases de données__
 
 Protocole TLS pour le chiffrement des communications
 Pour les bases de données :
