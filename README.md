@@ -68,8 +68,8 @@ Pour les cryptos monnaies, c’est un peu différent. Le wallet n’a pas accès
 Wallet pour crypto monnaie 
 
 Un wallet possède au moins deux choses :
--	Une adresse publique 
--	Une adresse privée
+-	__Une adresse publique__ 
+-	__Une adresse privée__
 
 
 
@@ -141,7 +141,7 @@ __L’intégrité__
 
 Prévenir l’altération volontaire ou accidentelle d’une donnée ou des services
 
-__La confidentialité __
+__La confidentialité__
 
 La confidentialité des données lors d’échanges, garantir que des données acquises illégalement soient inutilisables
 
@@ -151,14 +151,14 @@ S’assurer que l’envoi et la réception d’un message sont incontestables, p
 La protection contre l’analyse du trafic
 L’utilisation des protocoles SSL (Secure Socket Layer) et TLS (Transport Layer Security) dans les échanges sur le Web (https)
 
-## Sécurisation des communications avec TLS
+###### Sécurisation des communications avec TLS
 
 3 fonctions majeures :
 	Confidentialité : algorithme de chiffrements symétriques (AES 256, RC4, DES, Blow Fish) et asymétrique (RSA,DSA, Diifie Helmann) 
 	Intégrité : Signature des données (HMAC, MD,RIPEMD, SHA-1)
 	Authentification : Certificat X.509
 
-## Mettre en place un mécanisme d’authentification
+###### Mettre en place un mécanisme d’authentification
 
 3 manières de stocker les mots de passe
 	En clair
@@ -172,22 +172,22 @@ Utiliser une fonction de hachage spécifique avec plusieurs itérations de calcu
 Biométrie de l’utilisateur (empreinte, face id)
 Authentification multifactorielle (SMS)
 
-## Contrôler l’accès à nos applications
+###### Contrôler l’accès à nos applications
 
 Le moindre privilège : Une tâche ne doit bénéficier que des privilèges strictement nécessaires à l’exécution du code menant à bien ses fonctionnalités
 La bibliothèque Oauth 2.0
 4 rôles : Le détenteur, le serveur de ressources, le client, le serveur d’autorisation
 
-## Gérer les sessions
+###### Gérer les sessions
 
 Surtout sur le web
 
-## Manipuler les données non fiables
+###### Manipuler les données non fiables
 
 Injection SQL …
 Coté serveur et client
 
-## Protection des données et des bases de données
+###### Protection des données et des bases de données
 
 Protocole TLS pour le chiffrement des communications
 Pour les bases de données :
@@ -204,7 +204,7 @@ Pendant l’exploitation
 *	Limiter les fonctionnalités
 *	Historiser les transactions
 
-## Sécuriser les erreurs des logs
+###### Sécuriser les erreurs des logs
 
 Traiter les erreurs
 *	Limiter les informations divulguées
