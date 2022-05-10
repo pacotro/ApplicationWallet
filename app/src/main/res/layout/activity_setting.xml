@@ -4,41 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Setting">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="342dp"
-        android:layout_height="146dp"
-        android:text="Welcome to ESME Wallet"
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="Réglages"
         android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_connexion"
         android:layout_width="276dp"
         android:layout_height="73dp"
-        android:layout_marginTop="158dp"
-        android:text="Utiliser la phrase secrete"
+        android:layout_marginTop="108dp"
+        android:text="SUPPRIMER LE COMPTE"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
         android:id="@+id/button_inscription"
         android:layout_width="276dp"
         android:layout_height="73dp"
-        android:layout_marginTop="52dp"
-        android:text="Creer un nouveau Wallet"
+        android:layout_marginTop="40dp"
+        android:text="CHANGER LE MOT DE PASSE"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_connexion" />
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="276dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="40dp"
+        android:text="LIER UN WALLET AU COMPTE"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_inscription" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,11 @@
       <map>
         <entry key="..\:/Users/sarat/AndroidStudioProjects/ApplicationWallet/app/src/main/res/layout/activity_connexion.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/sarat/AndroidStudioProjects/ApplicationWallet/app/src/main/res/layout/activity_inscription.xml" value="0.22" />
+        <entry key="..\:/Users/sarat/AndroidStudioProjects/ApplicationWallet/app/src/main/res/layout/activity_inscription_phrase.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/sarat/AndroidStudioProjects/ApplicationWallet/app/src/main/res/layout/activity_main.xml" value="0.17135416666666667" />
+        <entry key="..\:/Users/sarat/AndroidStudioProjects/ApplicationWallet/app/src/main/res/layout/activity_main2.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/sarat/AndroidStudioProjects/ApplicationWallet/app/src/main/res/layout/activity_page_principal.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/sarat/AndroidStudioProjects/ApplicationWallet/app/src/main/res/layout/activity_setting.xml" value="0.17552083333333332" />
       </map>
     </option>
   </component>

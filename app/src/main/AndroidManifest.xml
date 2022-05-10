@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApplicationWallet">
         <activity
+            android:name=".PagePrincipal"
+            android:exported="false" />
+        <activity
+            android:name=".Setting"
+            android:exported="false" />
+        <activity
+            android:name=".InscriptionPhrase"
+            android:exported="false" />
+        <activity
             android:name=".Inscription"
             android:exported="false" />
         <activity
