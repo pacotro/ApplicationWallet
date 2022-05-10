@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,17 +23,71 @@ import com.google.firebase.auth.FirebaseUser;
 public class Inscription extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    EditText pseudo,nom,email,password,verifpassword;
+    String Pseudo,Fname,Email,Mdp,Verifmdp;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
 
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        email = findViewById(R.id.editTextNewMail);
+        password = findViewById(R.id.editTextNewPassword);
+        verifpassword= findViewById(R.id.editTextNewCPassword);
+        pseudo= findViewById(R.id.editTextNewUserName);
+        nom=findViewById(R.id.editTextNewFullName);
+
         Button btn = (Button) findViewById(R.id.Benregistrer);
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Pseudo=pseudo.getText().toString().trim();
+                Fname = nom.getText().toString().trim();
+                Email = email.getText().toString().trim();
+                Mdp= password.getText().toString().trim();
+                Verifmdp=verifpassword.getText().toString().trim();
+
+                if (TextUtils.isEmpty(Pseudo) ) {
+                    pseudo.setError("Le nom d'utilisateur est requis");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(Fname) ) {
+                    email.setError("L'email est requis");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(Email) ) {
+                    email.setError("L'email est requis");
+                    return;
+                }
+
+                if (!Email.matches(emailPattern)) {
+                    email.setError("L'email n'est pas correct");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(Mdp)) {
+                    password.setError("Le mot de passe est requis");
+                    return;
+                }
+
+                if (Mdp.length() < 6) {
+                    password.setError("Le mot de passe doit contenir au moins 6 caractères");
+                    return;
+                }
+
+                if (!password.equals(Verifmdp) && Mdp.length() != 0) {
+                    verifpassword.setError("Les mots de passe sont différents !");
+                    return;
+                }
+
                 startActivity(new Intent(Inscription.this, InscriptionPhrase.class));
             }
         });
