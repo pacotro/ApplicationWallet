@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".Inscription">
 
+    <Button
+        android:id="@+id/VoirMdp2"
+        android:onClick="ShowHidePass2"
+        android:layout_width="81dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="164dp"
+        android:text="Voir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextNewCPassword" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -81,8 +92,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="Confirmation Mot de passe"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -99,5 +110,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNewCPassword" />
+
+    <Button
+        android:id="@+id/VoirMdp1"
+        android:onClick="ShowHidePass1"
+        android:layout_width="81dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="31dp"
+        android:text="Voir"
+        app:layout_constraintBottom_toTopOf="@+id/VoirMdp2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextNewPassword"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.995" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

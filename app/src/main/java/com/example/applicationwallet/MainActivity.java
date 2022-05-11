@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
 
         Button btn = (Button)findViewById(R.id.button_connexion);
         Button btn2 = (Button)findViewById(R.id.button_inscription);
-
+        Button btn3 = (Button)findViewById(R.id.reglage);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +44,12 @@ public class MainActivity extends Activity {
             }
         });
 
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Setting.class));
+            }
+        });
 
     }
 

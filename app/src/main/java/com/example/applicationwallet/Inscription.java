@@ -7,11 +7,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,38 +37,38 @@ public class Inscription extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
 
+
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         email = findViewById(R.id.editTextNewMail);
         password = findViewById(R.id.editTextNewPassword);
-        verifpassword= findViewById(R.id.editTextNewCPassword);
-        pseudo= findViewById(R.id.editTextNewUserName);
-        nom=findViewById(R.id.editTextNewFullName);
+        verifpassword = findViewById(R.id.editTextNewCPassword);
+        pseudo = findViewById(R.id.editTextNewUserName);
+        nom = findViewById(R.id.editTextNewFullName);
 
         Button btn = (Button) findViewById(R.id.Benregistrer);
-
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Pseudo=pseudo.getText().toString().trim();
+                Pseudo = pseudo.getText().toString().trim();
                 Fname = nom.getText().toString().trim();
                 Email = email.getText().toString().trim();
-                Mdp= password.getText().toString().trim();
-                Verifmdp=verifpassword.getText().toString().trim();
+                Mdp = password.getText().toString().trim();
+                Verifmdp = verifpassword.getText().toString().trim();
 
-                if (TextUtils.isEmpty(Pseudo) ) {
+                if (TextUtils.isEmpty(Pseudo)) {
                     pseudo.setError("Le nom d'utilisateur est requis");
                     return;
                 }
 
-                if (TextUtils.isEmpty(Fname) ) {
+                if (TextUtils.isEmpty(Fname)) {
                     email.setError("L'email est requis");
                     return;
                 }
 
-                if (TextUtils.isEmpty(Email) ) {
+                if (TextUtils.isEmpty(Email)) {
                     email.setError("L'email est requis");
                     return;
                 }
@@ -83,7 +88,7 @@ public class Inscription extends AppCompatActivity {
                     return;
                 }
 
-                if (!password.equals(Verifmdp) && Mdp.length() != 0) {
+                if (!Mdp.equals(Verifmdp) && Mdp.length() != 0) {
                     verifpassword.setError("Les mots de passe sont différents !");
                     return;
                 }
@@ -91,6 +96,23 @@ public class Inscription extends AppCompatActivity {
                 startActivity(new Intent(Inscription.this, InscriptionPhrase.class));
             }
         });
+    }
+
+
+    public void ShowHidePass1(View view){
+        if(view.getId()==R.id.VoirMdp1){
+            if(password.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
+                password.setTransformationMethod(HideReturnsTransformationMethod.getInstance()); }
+            else{ password.setTransformationMethod(PasswordTransformationMethod.getInstance()); }
+        }  }
+
+    public void ShowHidePass2(View view){
+        if(view.getId()==R.id.VoirMdp2){
+            if(verifpassword.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
+                verifpassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance()); }
+            else{ verifpassword.setTransformationMethod(PasswordTransformationMethod.getInstance()); }
+        }  }
+
 /*
         //Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -216,4 +238,3 @@ public class Inscription extends AppCompatActivity {
 
     }*/
     }
-}
