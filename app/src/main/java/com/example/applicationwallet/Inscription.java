@@ -93,7 +93,20 @@ public class Inscription extends AppCompatActivity {
                     return;
                 }
 
+                String encrypted = "";
+                try {
+                    encrypted = AESUtils.encrypt(Mdp);
+                    Log.d("TEST", "encrypted:" + encrypted);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                //Toast.makeText(getApplicationContext(), encrypted , Toast.LENGTH_SHORT).show();
+
                 startActivity(new Intent(Inscription.this, InscriptionPhrase.class));
+
+
+
             }
         });
     }
