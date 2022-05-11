@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/nav_account"
+        android:title="Répertoire" />
+
+    <item
+        android:id="@+id/nav_other_wallets"
+        android:title="Autres Wallet" />
+    <item
+        android:id="@+id/nav_keys"
+        android:title="Clés" />
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Réglages" />
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Déconnexion" />
+
+</menu>
