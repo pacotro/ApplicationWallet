@@ -31,14 +31,14 @@ public class Inscription extends AppCompatActivity {
     EditText pseudo,nom,email,password,verifpassword;
     String Pseudo,Fname,Email,Mdp,Verifmdp;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String iChars = "~`!#$%^&*+=-[]\\\';,/{}|\":<>?";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
 
-
-        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         email = findViewById(R.id.editTextNewMail);
         password = findViewById(R.id.editTextNewPassword);
@@ -83,10 +83,11 @@ public class Inscription extends AppCompatActivity {
                     return;
                 }
 
-                if (Mdp.length() < 6) {
+                if (Mdp.length() < 8 ) {
                     password.setError("Le mot de passe doit contenir au moins 6 caractères");
                     return;
                 }
+
 
                 if (!Mdp.equals(Verifmdp) && Mdp.length() != 0) {
                     verifpassword.setError("Les mots de passe sont différents !");
@@ -105,12 +106,58 @@ public class Inscription extends AppCompatActivity {
 
                 startActivity(new Intent(Inscription.this, InscriptionPhrase.class));
 
-
-
+                /*
+                dans la bdd il faut mettre le mdp crypter, le surnom, les clés (?) et creer une
+                variable qui compte le  nombre de jour depuis la derniere fois que le mdp a ete changé
+                on doit ajouter la phrase apres (ou sinon la phrase doit permettre de retrouver les
+                clés ce qui parait plus simple
+                */
             }
         });
     }
 
+    boolean Digital (String texte) {
+        for (int i =0 ;  i < texte.length(); i++) {
+            if (Character.isDigit(texte.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    boolean Special (String texte) {
+        for (int i =0 ;  i < texte.length(); i++) {
+            if (!Character.isLetterOrDigit(texte.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    boolean Upper (String texte) {
+        for (int i =0 ;  i < texte.length(); i++) {
+            if (Character.isUpperCase(texte.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    boolean Lower (String texte) {
+        for (int i =0 ;  i < texte.length(); i++) {
+            if (Character.isLowerCase(texte.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    boolean StrongPassword(String texte) {
+        if (!Digital(texte) || !Lower(texte) || !Upper(texte) || !Special(texte)) {
+            return false;
+        }
+        return true;
+    }
 
     public void ShowHidePass1(View view){
         if(view.getId()==R.id.VoirMdp1){
@@ -125,6 +172,8 @@ public class Inscription extends AppCompatActivity {
                 verifpassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance()); }
             else{ verifpassword.setTransformationMethod(PasswordTransformationMethod.getInstance()); }
         }  }
+
+
 
 /*
         //Initialize Firebase Auth
@@ -225,9 +274,6 @@ public class Inscription extends AppCompatActivity {
                         }
                     }
                 });*/
-
-
-
 
 
     /*
