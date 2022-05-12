@@ -64,7 +64,7 @@ public class Inscription extends AppCompatActivity {
                 }
 
                 if (TextUtils.isEmpty(Fname)) {
-                    email.setError("L'email est requis");
+                    nom.setError("Le nom complet est requis");
                     return;
                 }
 
