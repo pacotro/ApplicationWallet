@@ -88,6 +88,12 @@ public class Inscription extends AppCompatActivity {
                     return;
                 }
 
+                if (!StrongPassword(Mdp)){
+                    password.setError("Le mot de passe doit contenir au moins 1 minuscule 1 majuscule 1 caractere spécial et 1 chiffre");
+                    //return;
+                    //a reactiver plus tard
+                }
+
 
                 if (!Mdp.equals(Verifmdp) && Mdp.length() != 0) {
                     verifpassword.setError("Les mots de passe sont différents !");
