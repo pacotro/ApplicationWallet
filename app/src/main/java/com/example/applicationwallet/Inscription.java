@@ -20,16 +20,26 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Inscription extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
     EditText pseudo,nom,email,password,verifpassword;
     String Pseudo,Fname,Email,Mdp,Verifmdp;
+    String userID;
+
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String iChars = "~`!#$%^&*+=-[]\\\';,/{}|\":<>?";
 
@@ -39,6 +49,8 @@ public class Inscription extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
 
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
         email = findViewById(R.id.editTextNewMail);
         password = findViewById(R.id.editTextNewPassword);
@@ -100,17 +112,46 @@ public class Inscription extends AppCompatActivity {
                     return;
                 }
 
-                String encrypted = "";
+                String Encrypted = "";
                 try {
-                    encrypted = AESUtils.encrypt(Mdp);
-                    Log.d("TEST", "encrypted:" + encrypted);
+                    Encrypted = AESUtils.encrypt(Mdp);
+                    Log.d("TEST", "encrypted:" + Encrypted);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
+                fAuth.createUserWithEmailAndPassword(Email, Encrypted).addOnCompleteListener (new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            userID = fAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = fStore.collection("users").document(userID);
+                            Map<String,Object> user = new HashMap<>();
+                            user.put("nom", Fname);
+                            user.put("Pseudo", Pseudo);
+                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Tag", "onSuccess: Profil bien créé pour "+ userID);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("Tag", "onFailure: " + e.toString());
+                                }
+                            });
+                            startActivity(new Intent(Inscription.this, InscriptionPhrase.class));
+                        } else {
+                            Log.i("Tag",task.getException().getMessage());
+                            Toast.makeText(Inscription.this, "L'inscription a échoué", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                });
+
                 //Toast.makeText(getApplicationContext(), encrypted , Toast.LENGTH_SHORT).show();
 
-                startActivity(new Intent(Inscription.this, InscriptionPhrase.class));
+                //startActivity(new Intent(Inscription.this, InscriptionPhrase.class));
 
                 /*
                 dans la bdd il faut mettre le mdp crypter, le surnom, les clés (?) et creer une
