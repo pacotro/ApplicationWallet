@@ -1,22 +1,17 @@
 package com.example.applicationwallet;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,12 +20,17 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class Inscription extends AppCompatActivity {
 
@@ -39,6 +39,10 @@ public class Inscription extends AppCompatActivity {
     EditText pseudo,nom,email,password,verifpassword;
     String Pseudo,Fname,Email,Mdp,Verifmdp;
     String userID;
+    Date date;
+    String DateDuJour;
+    String[] Phrase;
+    String PhraseSecrete;
 
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String iChars = "~`!#$%^&*+=-[]\\\';,/{}|\":<>?";
@@ -69,6 +73,8 @@ public class Inscription extends AppCompatActivity {
                 Email = email.getText().toString().trim();
                 Mdp = password.getText().toString().trim();
                 Verifmdp = verifpassword.getText().toString().trim();
+                date = new Date();
+                DateDuJour = date.toString();
 
                 if (TextUtils.isEmpty(Pseudo)) {
                     pseudo.setError("Le nom d'utilisateur est requis");
@@ -120,6 +126,9 @@ public class Inscription extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
+                Phrase = generateSecretPhrase();
+                PhraseSecrete = String.join(" ", Phrase);
+
                 fAuth.createUserWithEmailAndPassword(Email, Encrypted).addOnCompleteListener (new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -129,6 +138,7 @@ public class Inscription extends AppCompatActivity {
                             Map<String,Object> user = new HashMap<>();
                             user.put("nom", Fname);
                             user.put("Pseudo", Pseudo);
+                            user.put("Phrase secrete", PhraseSecrete);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -140,7 +150,10 @@ public class Inscription extends AppCompatActivity {
                                     Log.d("Tag", "onFailure: " + e.toString());
                                 }
                             });
-                            startActivity(new Intent(Inscription.this, InscriptionPhrase.class));
+                            Intent i = new Intent(Inscription.this, InscriptionPhrase.class);
+                            i.putExtra("Phrase",PhraseSecrete);
+                            startActivity(i);
+
                         } else {
                             Log.i("Tag",task.getException().getMessage());
                             Toast.makeText(Inscription.this, "L'inscription a échoué", Toast.LENGTH_SHORT).show();
@@ -149,16 +162,6 @@ public class Inscription extends AppCompatActivity {
 
                 });
 
-                //Toast.makeText(getApplicationContext(), encrypted , Toast.LENGTH_SHORT).show();
-
-                //startActivity(new Intent(Inscription.this, InscriptionPhrase.class));
-
-                /*
-                dans la bdd il faut mettre le mdp crypter, le surnom, les clés (?) et creer une
-                variable qui compte le  nombre de jour depuis la derniere fois que le mdp a ete changé
-                on doit ajouter la phrase apres (ou sinon la phrase doit permettre de retrouver les
-                clés ce qui parait plus simple
-                */
             }
         });
     }
@@ -220,127 +223,43 @@ public class Inscription extends AppCompatActivity {
             else{ verifpassword.setTransformationMethod(PasswordTransformationMethod.getInstance()); }
         }  }
 
+    String[] generateSecretPhrase(){
 
+        int min = 0;
+        int max = 78855;
 
-/*
-        //Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
+        ArrayList listeOfNumber = new ArrayList();
+        ArrayList<String> listeOfWords = new ArrayList<String>();
+        Random random = new Random();
 
-        Button btnEnregistrer = (Button)findViewById(R.id.Benregistrer);
-
-        EditText editTextNewUserName = (EditText) this.findViewById(R.id.editTextNewUserName);
-        EditText editTextNewFullName = (EditText) this.findViewById(R.id.editTextNewFullName);
-        EditText editTextNewMail = (EditText) this.findViewById(R.id.editTextNewMail);
-        EditText editTextNewPassword = (EditText) this.findViewById(R.id.editTextNewPassword);
-        EditText editTextNewCPassword = (EditText) this.findViewById(R.id.editTextNewCPassword);
-
-        String NewUserName = editTextNewUserName.getText().toString();
-        String NewFullName = editTextNewFullName.getText().toString();
-        String NewMail = editTextNewMail.getText().toString();
-        String NewPassword = editTextNewPassword.getText().toString();
-        String NewCPassword = editTextNewCPassword.getText().toString();
-
-
-        btnEnregistrer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                createAccount(NewMail,NewPassword );
-                Toast.makeText(Inscription.this, "Inscription réussite",
-                        Toast.LENGTH_SHORT).show();
-                /*
-                Toast.makeText(Inscription.this, NewPassword,
-                        Toast.LENGTH_SHORT).show();
-                if (NewPassword==NewCPassword){
-                    Toast.makeText(Inscription.this, "OK",
-                            Toast.LENGTH_SHORT).show();
-                    createAccount(NewMail,NewPassword );
-                    Toast.makeText(Inscription.this, "Inscription réussite",
-                            Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(Inscription.this, "Les mots de passes ne sont pas identique",
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
-    }
-
-
-
-    //Lors de l'initialisation de votre activité, vérifiez si l'utilisateur est actuellement connecté.
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            reload();
+        for(int i = 0; i < 12; ++i){
+            int value = random.nextInt(max + min) + min;
+            listeOfNumber.add(value);
         }
+
+        for(int j = 0; j < listeOfNumber.size(); ++j){
+            int a= (int) listeOfNumber.get(j);
+
+            try
+            {
+                InputStream is = this.getResources().openRawResource(R.raw.words);
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+
+                for(int i = 0; i < a-1 ; ++i){
+                    reader.readLine();}
+
+                String lineIWant = reader.readLine();
+                listeOfWords.add(lineIWant); }
+
+            catch(Exception e) { e.printStackTrace(); }
+
+        }
+        String[] word = new String[12];
+        int a = listeOfWords.size();
+        for(int i=0; i<a ;i++){
+            word[i]=listeOfWords.get(i);
+        }
+        return word ;
     }
 
-    //méthode qui prend une adresse e - mail et mot de passe, les valide, et crée ensuite
-    //un nouvel utilisateur avec la createUserWithEmailAndPassword méthode.
-    private void createAccount(String email, String password) {
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(Inscription.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(Inscription.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
-                    }});}
-
-        /*
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(Inscription.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
-                    }
-                });*/
-
-
-    /*
-    private void sendEmailVerification() {
-        // Send verification email
-        // [START send_email_verification]
-        final FirebaseUser user = mAuth.getCurrentUser();
-        user.sendEmailVerification()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // Email sent
-                    }
-                });
-        // [END send_email_verification]
-    }
-
-    private void reload() { }
-
-    private void updateUI(FirebaseUser user) {
-
-    }*/
     }
