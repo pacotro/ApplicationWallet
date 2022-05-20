@@ -2,12 +2,6 @@ package com.example.applicationwallet;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Random;
-
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -45,7 +39,7 @@ public class InscriptionPhrase extends AppCompatActivity {
 
 
         TextView ListOfWords = (TextView)findViewById(R.id.listOfWords);
-        Button copy = (Button)findViewById(R.id.CopyButton);
+        Button copy = (Button)findViewById(R.id.Paste);
         Button valider = (Button)findViewById(R.id.Valider);
         this.clipboardManager = (ClipboardManager) this.getSystemService(Context.CLIPBOARD_SERVICE);
         this.listOfWords = (TextView) findViewById(R.id.listOfWords);

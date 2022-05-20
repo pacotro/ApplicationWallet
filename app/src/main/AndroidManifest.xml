@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApplicationWallet">
         <activity
+            android:name=".ConnexionPhrase"
+            android:exported="false" />
+        <activity
             android:name=".MainPage"
             android:exported="false" />
         <activity

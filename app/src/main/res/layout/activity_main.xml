@@ -24,7 +24,7 @@
         android:layout_width="276dp"
         android:layout_height="73dp"
         android:layout_marginTop="158dp"
-        android:text="Utiliser la phrase secrete"
+        android:text="Connexion"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
