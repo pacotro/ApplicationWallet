@@ -24,6 +24,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -138,7 +140,7 @@ public class Inscription extends AppCompatActivity {
                             Map<String,Object> user = new HashMap<>();
                             user.put("nom", Fname);
                             user.put("Pseudo", Pseudo);
-                            user.put("Phrase secrete", PhraseSecrete);
+                            user.put("Phrase_secrete", PhraseSecrete);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -223,23 +225,35 @@ public class Inscription extends AppCompatActivity {
             else{ verifpassword.setTransformationMethod(PasswordTransformationMethod.getInstance()); }
         }  }
 
-    String[] generateSecretPhrase(){
+    String[] generateSecretPhrase() {
 
-        int min = 0;
-        int max = 78855;
-
-        ArrayList listeOfNumber = new ArrayList();
-        ArrayList<String> listeOfWords = new ArrayList<String>();
         Random random = new Random();
+        String numbers = "" ;
+        String vi = "";
+        String[] mot = new String[12];
+        int[] num = new int[12];
+        ArrayList<String> listeOfWords = new ArrayList<String>();
 
-        for(int i = 0; i < 12; ++i){
-            int value = random.nextInt(max + min) + min;
-            listeOfNumber.add(value);
-        }
+        for(int i = 1; i <=128; i++) {
+            int value = random.nextInt((1)+1);
+            numbers += String.valueOf(value); }
 
-        for(int j = 0; j < listeOfNumber.size(); ++j){
-            int a= (int) listeOfNumber.get(j);
+        for(int i = 1; i <=4; i++) {
+            int value = random.nextInt((1)+1);
+            vi += String.valueOf(value); }
 
+        numbers += vi;
+
+        for(int i = 0; i <=11; i++) {
+            String value = numbers.substring(i*11,(i+1)*11-1);
+            mot[i]=value; }
+
+        for (int i = 0; i <=11; i++) {
+            int decimal=Integer.parseInt(mot[i],2);
+            num[i]=decimal;}
+
+        for(int j = 0; j < num.length; ++j){
+            int a = num[j];
             try
             {
                 InputStream is = this.getResources().openRawResource(R.raw.words);
@@ -257,8 +271,7 @@ public class Inscription extends AppCompatActivity {
         String[] word = new String[12];
         int a = listeOfWords.size();
         for(int i=0; i<a ;i++){
-            word[i]=listeOfWords.get(i);
-        }
+            word[i]=listeOfWords.get(i); }
         return word ;
     }
 

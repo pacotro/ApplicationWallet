@@ -7,7 +7,7 @@
     tools:context=".Connexion">
 
     <EditText
-        android:id="@+id/editTextMail"
+        android:id="@+id/editTextPhrase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhrase"
         app:layout_constraintVertical_bias="0.217" />
 
     <TextView
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:text="Connexion"
         android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextMail"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPhrase"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,6 +64,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMail" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhrase" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
