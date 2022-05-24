@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/listOfWords" />
 
     <Button
-        android:id="@+id/Valider"
+        android:id="@+id/buttonCo"
         android:layout_width="180dp"
         android:layout_height="64dp"
         android:layout_marginTop="96dp"

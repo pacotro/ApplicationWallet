@@ -40,7 +40,7 @@ public class InscriptionPhrase extends AppCompatActivity {
 
         TextView ListOfWords = (TextView)findViewById(R.id.listOfWords);
         Button copy = (Button)findViewById(R.id.Paste);
-        Button valider = (Button)findViewById(R.id.Valider);
+        Button valider = (Button)findViewById(R.id.buttonCo);
         this.clipboardManager = (ClipboardManager) this.getSystemService(Context.CLIPBOARD_SERVICE);
         this.listOfWords = (TextView) findViewById(R.id.listOfWords);
 

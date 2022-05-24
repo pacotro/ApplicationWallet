@@ -43,11 +43,11 @@
         app:layout_constraintTop_toBottomOf="@+id/listOfWords" />
 
     <Button
-        android:id="@+id/Valider"
-        android:layout_width="180dp"
-        android:layout_height="64dp"
+        android:id="@+id/buttonCo"
+        android:layout_width="223dp"
+        android:layout_height="73dp"
         android:layout_marginTop="96dp"
-        android:text="VALIDER"
+        android:text="Se connecter"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
