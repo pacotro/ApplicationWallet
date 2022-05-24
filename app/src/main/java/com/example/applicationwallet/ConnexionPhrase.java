@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -83,12 +84,12 @@ public class ConnexionPhrase extends AppCompatActivity {
             public void onClick(View v) {
                 phraseUtilisateur = listOfWords.getText().toString().trim();
                 if (phraseUtilisateur.isEmpty()){
-                    Log.d("tag", "Phrase vide");
+                    Toast.makeText(getApplicationContext(), "La phrase est vide", Toast.LENGTH_SHORT).show();
                 }else{
                     if(phraseUtilisateur.equals(Phrase)){
                         startActivity(new Intent(ConnexionPhrase.this, MainPage.class));
                     }else {
-                        Log.d("tag", "Phrase incorrecte");
+                        Toast.makeText(getApplicationContext(), "La phrase est incorrecte", Toast.LENGTH_SHORT).show();
                     } }
             }
         });

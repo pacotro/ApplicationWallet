@@ -22,9 +22,9 @@
         android:id="@+id/listOfWords"
         android:layout_width="308dp"
         android:layout_height="203dp"
-        android:layout_marginTop="80dp"
-        android:scrollbars="vertical"
+        android:layout_marginTop="112dp"
         android:hint="Entrer votre phrase secrete"
+        android:scrollbars="vertical"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -55,5 +55,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listOfWords"
         app:layout_constraintVertical_bias="0.328" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="410dp"
+        android:layout_height="69dp"
+        android:gravity="center"
+        android:text="Merci d'entrer à la ligne à chaque mot et de ne mettre aucune majuscule"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/listOfWords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
