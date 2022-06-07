@@ -56,6 +56,9 @@ public class ConnexionPhrase extends AppCompatActivity {
 
         userID = fAuth.getCurrentUser().getUid();
 
+        Intent intent = getIntent();
+        String password1= intent.getStringExtra("mdp");
+
 
 
         DocumentReference documentReference = fStore.collection("users").document(userID);
@@ -87,7 +90,10 @@ public class ConnexionPhrase extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "La phrase est vide", Toast.LENGTH_SHORT).show();
                 }else{
                     if(phraseUtilisateur.equals(Phrase)){
-                        startActivity(new Intent(ConnexionPhrase.this, MainPage.class));
+                        Intent i = new Intent(ConnexionPhrase.this, MainPage.class);
+                        i.putExtra("Phrase",Phrase);
+                        i.putExtra("mdp",password1);
+                        startActivity(i);
                     }else {
                         Toast.makeText(getApplicationContext(), "La phrase est incorrecte", Toast.LENGTH_SHORT).show();
                     } }

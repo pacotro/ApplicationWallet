@@ -36,6 +36,7 @@ public class Connexion extends AppCompatActivity {
         Connexion.setOnClickListener(v -> {
             String phrase = editTextMail.getText().toString().trim();
             String password = editTextMdp.getText().toString().trim();
+            String password1 = editTextMdp.getText().toString().trim();
 
             String Encrypted = "";
             try {
@@ -69,7 +70,10 @@ public class Connexion extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(phrase,password).addOnCompleteListener(task -> {
                 if(task.isSuccessful())
                 {
-                    startActivity(new Intent(Connexion.this, ConnexionPhrase.class));
+                    Intent i = new Intent(Connexion.this, ConnexionPhrase.class);
+                    i.putExtra("mdp",password1);
+                    startActivity(i);
+                    //startActivity(new Intent(Connexion.this, ConnexionPhrase.class));
                 }
                 else
                 {
