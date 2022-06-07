@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApplicationWallet">
         <activity
+            android:name=".Repertoire"
+            android:exported="false" />
+        <activity
+            android:name=".Keys"
+            android:exported="false" />
+        <activity
             android:name=".ConnexionPhrase"
             android:exported="false" />
         <activity
