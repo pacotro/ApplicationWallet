@@ -44,10 +44,10 @@ public class MainPage extends AppCompatActivity {
     public final int SALT_INDEX = 1;
     public final int PBKDF2_INDEX = 2;
 
-
-
     String phrase;
     String password1;
+    String priveenfant;
+    String clepublique;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,7 @@ public class MainPage extends AppCompatActivity {
 
         Button buttonCle = (Button)findViewById(R.id.buttonCle);
         Button buttonReg = (Button)findViewById(R.id.buttonReg);
-        Button buttonDec = (Button)findViewById(R.id.buttonDec);
+        Button buttonDec = (Button)findViewById(R.id.buttonVoir);
         Button buttonRep = (Button)findViewById(R.id.buttonRep);
 
         buttonDec.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +74,11 @@ public class MainPage extends AppCompatActivity {
         buttonCle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainPage.this, Keys.class));
+                Intent i = new Intent(MainPage.this, Keys.class);
+                i.putExtra("mdp",password1);
+                i.putExtra("clé1",clepublique);
+                i.putExtra("clé2",priveenfant);
+                startActivity(i);
             }
         });
         buttonRep.setOnClickListener(new View.OnClickListener() {
@@ -111,15 +115,12 @@ public class MainPage extends AppCompatActivity {
             String priveetendu = calculateHMAC(privatekey, publickey);
             String publicetendu = calculateHMAC(priveetendu,publickey);
             String hmac2 = calculateHMAC(publicetendu, CLEENFANT);
-            String priveenfant= hmac2+priveetendu;
-            String clepublique=calculateHMAC(priveenfant, publickey);
+            priveenfant= hmac2+priveetendu;
+            clepublique=calculateHMAC(priveenfant, publickey);
 
             TextView tv1 = (TextView)findViewById(R.id.clé);
-            tv1.setMovementMethod(new ScrollingMovementMethod());
             tv1.append(clepublique);
 
-            //System.out.println("Private key: "+priveenfant+"\nPublic key: "+clepublique);
-            Toast.makeText(getApplicationContext(), "oui", Toast.LENGTH_SHORT).show();
 
 
         }

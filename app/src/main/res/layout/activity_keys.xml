@@ -2,8 +2,83 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/editTextMail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Keys">
+    tools:context=".Connexion">
+
+    <TextView
+        android:id="@+id/token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mes clées"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.138" />
+
+    <TextView
+        android:id="@+id/clé"
+        android:layout_width="317dp"
+        android:layout_height="87dp"
+        android:text="Clé publique : "
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/token"
+        app:layout_constraintVertical_bias="0.459" />
+
+    <TextView
+        android:id="@+id/clé2"
+        android:layout_width="317dp"
+        android:layout_height="87dp"
+        android:text="Clé privé : "
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/token"
+        app:layout_constraintVertical_bias="0.672" />
+
+    <Button
+        android:id="@+id/buttonVoir"
+        android:layout_width="225dp"
+        android:layout_height="84dp"
+        android:layout_marginBottom="44dp"
+        android:text="Voire la clé privée"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="289dp"
+        android:layout_height="82dp"
+        android:gravity="center"
+        android:text="Veuillez entrer votre mot de passe pour visionner la clée privée"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/clé"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/token"
+        app:layout_constraintVertical_bias="0.259" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="304dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Mot de passe"
+        app:layout_constraintBottom_toTopOf="@+id/clé"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
