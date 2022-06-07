@@ -12,7 +12,7 @@
         android:layout_height="104dp"
         android:layout_marginTop="44dp"
         android:gravity="center"
-        android:text="Phrase secrete "
+        android:text="Phrase secrète "
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:layout_width="308dp"
         android:layout_height="203dp"
         android:layout_marginTop="112dp"
-        android:hint="Entrer votre phrase secrete"
+        android:hint="Entrer votre phrase secrète"
         android:scrollbars="vertical"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,8 +58,8 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="410dp"
-        android:layout_height="69dp"
+        android:layout_width="336dp"
+        android:layout_height="91dp"
         android:gravity="center"
         android:text="Merci d'entrer à la ligne à chaque mot et de ne mettre aucune majuscule"
         android:textSize="20sp"
